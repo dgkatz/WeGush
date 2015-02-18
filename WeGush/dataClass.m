@@ -13,7 +13,7 @@
 @synthesize username;
 @synthesize gushesList;
 @synthesize chosenGush;
-
+@synthesize messageData;
 
 
 static dataClass *instance = nil;

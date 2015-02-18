@@ -7,7 +7,7 @@
 //
 
 #import "sonsorWVViewController.h"
-
+#import "SWRevealViewController.h"
 @interface sonsorWVViewController ()
 
 @end
@@ -26,7 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-        NSString *strURL = @"http://www.brighamandwomens.org";
+    _homeButton.target = self;
+    _homeButton.action = @selector(segue);
+    NSString *strURL = @"http://www.brighamandwomens.org";
     NSURL *url = [NSURL URLWithString:strURL];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];
@@ -35,6 +37,10 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+}
+-(void)segue{
+    SWRevealViewController *vc = (SWRevealViewController *)[self.storyboard instantiateViewControllerWithIdentifier:@"blah"];
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 

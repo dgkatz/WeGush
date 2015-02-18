@@ -37,6 +37,7 @@ int i;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [self.navigationController setValue:[[UINavigationBar alloc]init]forKeyPath:@"navigationBar"];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);

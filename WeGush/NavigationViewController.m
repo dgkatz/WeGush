@@ -19,7 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    menu = @[@"1",@"first",@"second",@"third",@"fourth",@"fifth"];
+    menu = @[@"1",@"first",@"second",@"third",@"fourth",@"fifth",@"sixth"];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 
 }

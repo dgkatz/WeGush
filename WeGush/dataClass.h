@@ -13,13 +13,14 @@
     NSString *target;
     NSString *username;
     NSMutableArray *gushesList;
+    NSMutableArray *messageData;
     
 }
 @property(nonatomic,retain)NSString *target;
 @property(nonatomic,retain)NSString *chosenGush;
 @property(nonatomic,retain)NSString *username;
 @property(nonatomic,retain)NSMutableArray *gushesList;
-
+@property(nonatomic,retain)NSMutableArray *messageData;
 
 
 

@@ -10,5 +10,6 @@
 
 @interface sonsorWVViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *homeButton;
 
 @end

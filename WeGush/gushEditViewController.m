@@ -135,7 +135,7 @@ int *num;
         [mc setSubject:emailTitle];
         [mc setMessageBody:messageBody isHTML:NO];
         [mc setToRecipients:toRecipents];
-        
+        mc.navigationBar.tintColor = [UIColor colorWithRed:142/255.0 green:225/255.0 blue:232/255.0 alpha:1.0f];
         // Present mail view controller on screen
         UIImage *gushImage = [UIImage imageNamed:str];
         NSData *myData = UIImagePNGRepresentation(gushImage);
@@ -163,7 +163,7 @@ int *num;
         UIImage *gushImage = [UIImage imageNamed:str];
         NSData *data = UIImagePNGRepresentation(gushImage);
         [messageVC addAttachmentData:data typeIdentifier:@"image/png" filename:str];
-        
+        messageVC.navigationBar.tintColor = [UIColor colorWithRed:142/255.0 green:225/255.0 blue:232/255.0 alpha:1.0f];
         [self presentViewController:messageVC animated:YES completion:NULL];
     }
     else if (buttonIndex == 2){

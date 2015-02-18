@@ -45,6 +45,8 @@
 		D72701271A795025009CC549 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72701261A795025009CC549 /* SystemConfiguration.framework */; };
 		D72701291A795046009CC549 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D72701281A795046009CC549 /* libz.dylib */; };
 		D727012E1A79D67B009CC549 /* B&Wlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D727012D1A79D67B009CC549 /* B&Wlogo.png */; };
+		D76BF7551A8FA48A00B43B2B /* bugViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76BF7541A8FA48A00B43B2B /* bugViewController.m */; };
+		D76BF7581A8FAB0700B43B2B /* SDiPhoneVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = D76BF7571A8FAB0700B43B2B /* SDiPhoneVersion.m */; };
 		D76D30351A6DF27F00F726F4 /* myGushesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D76D30341A6DF27F00F726F4 /* myGushesTableViewController.m */; };
 		D773ED891A7C904200F46396 /* editNavViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D773ED881A7C904200F46396 /* editNavViewController.m */; };
 		D7932A2B1A808A2D00D59CDF /* share.png in Resources */ = {isa = PBXBuildFile; fileRef = D7932A261A808A2D00D59CDF /* share.png */; };
@@ -52,6 +54,16 @@
 		D7932A2D1A808A2D00D59CDF /* settings2.png in Resources */ = {isa = PBXBuildFile; fileRef = D7932A281A808A2D00D59CDF /* settings2.png */; };
 		D7932A2E1A808A2D00D59CDF /* feedback.png in Resources */ = {isa = PBXBuildFile; fileRef = D7932A291A808A2D00D59CDF /* feedback.png */; };
 		D7932A2F1A808A2D00D59CDF /* mail.png in Resources */ = {isa = PBXBuildFile; fileRef = D7932A2A1A808A2D00D59CDF /* mail.png */; };
+		D7CDCD471A93F0D50065ED62 /* navBar.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CDCD461A93F0D50065ED62 /* navBar.m */; };
+		D7CDCD4A1A93FC3C0065ED62 /* customlNavController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CDCD491A93FC3C0065ED62 /* customlNavController.m */; };
+		D7CDCD4E1A940D140065ED62 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CDCD4D1A940D140065ED62 /* logo.png */; };
+		D7CDCD511A9427990065ED62 /* TPKeyboardAvoidingScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CDCD501A9427990065ED62 /* TPKeyboardAvoidingScrollView.m */; };
+		D7CDCD541A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CDCD531A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.m */; };
+		D7CDCD571A9431820065ED62 /* splashVC.m in Sources */ = {isa = PBXBuildFile; fileRef = D7CDCD561A9431820065ED62 /* splashVC.m */; };
+		D7CDCD5B1A9434F80065ED62 /* iPhone6.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CDCD581A9434F80065ED62 /* iPhone6.png */; };
+		D7CDCD5C1A9434F80065ED62 /* iPhone5.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CDCD591A9434F80065ED62 /* iPhone5.png */; };
+		D7CDCD5D1A9434F80065ED62 /* iPhone6plus.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CDCD5A1A9434F80065ED62 /* iPhone6plus.png */; };
+		D7CDCD5F1A9435040065ED62 /* iPhone4.png in Resources */ = {isa = PBXBuildFile; fileRef = D7CDCD5E1A9435040065ED62 /* iPhone4.png */; };
 		D7EB14111A82DF7B00B0FF6C /* background-640x960.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB13FC1A82DF7B00B0FF6C /* background-640x960.png */; };
 		D7EB14121A82DF7B00B0FF6C /* background-750x1334.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB13FD1A82DF7B00B0FF6C /* background-750x1334.png */; };
 		D7EB14141A82DF7B00B0FF6C /* heart.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB13FF1A82DF7B00B0FF6C /* heart.png */; };
@@ -79,7 +91,6 @@
 		D7EB144C1A82DF8100B0FF6C /* youmakemelaugh.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14371A82DF8100B0FF6C /* youmakemelaugh.png */; };
 		D7EB144D1A82DF8100B0FF6C /* yourawesomeness.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14381A82DF8100B0FF6C /* yourawesomeness.png */; };
 		D7EB144F1A82E09500B0FF6C /* more.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB144E1A82E09500B0FF6C /* more.png */; };
-		D7EB14551A82EAE100B0FF6C /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14541A82EAE100B0FF6C /* logo.png */; };
 		D7F9176A1A74A6EA00672F31 /* navViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F917691A74A6EA00672F31 /* navViewController.m */; };
 		D7F9176D1A74AE0C00672F31 /* webViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F9176C1A74AE0C00672F31 /* webViewController.m */; };
 		D7F917701A74B02F00672F31 /* aboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F9176F1A74B02F00672F31 /* aboutViewController.m */; };
@@ -166,6 +177,10 @@
 		D727012B1A7957A7009CC549 /* GAIEcommerceProductAction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommerceProductAction.h; sourceTree = "<group>"; };
 		D727012C1A7957B8009CC549 /* GAIEcommercePromotion.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GAIEcommercePromotion.h; sourceTree = "<group>"; };
 		D727012D1A79D67B009CC549 /* B&Wlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "B&Wlogo.png"; sourceTree = "<group>"; };
+		D76BF7531A8FA48A00B43B2B /* bugViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = bugViewController.h; sourceTree = "<group>"; };
+		D76BF7541A8FA48A00B43B2B /* bugViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = bugViewController.m; sourceTree = "<group>"; };
+		D76BF7561A8FAB0700B43B2B /* SDiPhoneVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SDiPhoneVersion.h; sourceTree = "<group>"; };
+		D76BF7571A8FAB0700B43B2B /* SDiPhoneVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SDiPhoneVersion.m; sourceTree = "<group>"; };
 		D76D30331A6DF27F00F726F4 /* myGushesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = myGushesTableViewController.h; sourceTree = "<group>"; };
 		D76D30341A6DF27F00F726F4 /* myGushesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = myGushesTableViewController.m; sourceTree = "<group>"; };
 		D773ED871A7C904200F46396 /* editNavViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = editNavViewController.h; sourceTree = "<group>"; };
@@ -175,6 +190,21 @@
 		D7932A281A808A2D00D59CDF /* settings2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settings2.png; sourceTree = "<group>"; };
 		D7932A291A808A2D00D59CDF /* feedback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = feedback.png; sourceTree = "<group>"; };
 		D7932A2A1A808A2D00D59CDF /* mail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mail.png; sourceTree = "<group>"; };
+		D7CDCD451A93F0D50065ED62 /* navBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navBar.h; sourceTree = "<group>"; };
+		D7CDCD461A93F0D50065ED62 /* navBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navBar.m; sourceTree = "<group>"; };
+		D7CDCD481A93FC3C0065ED62 /* customlNavController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = customlNavController.h; sourceTree = "<group>"; };
+		D7CDCD491A93FC3C0065ED62 /* customlNavController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = customlNavController.m; sourceTree = "<group>"; };
+		D7CDCD4D1A940D140065ED62 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		D7CDCD4F1A9427990065ED62 /* TPKeyboardAvoidingScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TPKeyboardAvoidingScrollView.h; sourceTree = "<group>"; };
+		D7CDCD501A9427990065ED62 /* TPKeyboardAvoidingScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingScrollView.m; sourceTree = "<group>"; };
+		D7CDCD521A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
+		D7CDCD531A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
+		D7CDCD551A9431820065ED62 /* splashVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = splashVC.h; sourceTree = "<group>"; };
+		D7CDCD561A9431820065ED62 /* splashVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = splashVC.m; sourceTree = "<group>"; };
+		D7CDCD581A9434F80065ED62 /* iPhone6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone6.png; sourceTree = "<group>"; };
+		D7CDCD591A9434F80065ED62 /* iPhone5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone5.png; sourceTree = "<group>"; };
+		D7CDCD5A1A9434F80065ED62 /* iPhone6plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone6plus.png; sourceTree = "<group>"; };
+		D7CDCD5E1A9435040065ED62 /* iPhone4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = iPhone4.png; sourceTree = "<group>"; };
 		D7EB13FC1A82DF7B00B0FF6C /* background-640x960.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-640x960.png"; sourceTree = "<group>"; };
 		D7EB13FD1A82DF7B00B0FF6C /* background-750x1334.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-750x1334.png"; sourceTree = "<group>"; };
 		D7EB13FF1A82DF7B00B0FF6C /* heart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heart.png; sourceTree = "<group>"; };
@@ -202,7 +232,6 @@
 		D7EB14371A82DF8100B0FF6C /* youmakemelaugh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youmakemelaugh.png; sourceTree = "<group>"; };
 		D7EB14381A82DF8100B0FF6C /* yourawesomeness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yourawesomeness.png; sourceTree = "<group>"; };
 		D7EB144E1A82E09500B0FF6C /* more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more.png; sourceTree = "<group>"; };
-		D7EB14541A82EAE100B0FF6C /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		D7F917681A74A6EA00672F31 /* navViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = navViewController.h; sourceTree = "<group>"; };
 		D7F917691A74A6EA00672F31 /* navViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = navViewController.m; sourceTree = "<group>"; };
 		D7F9176B1A74AE0C00672F31 /* webViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = webViewController.h; sourceTree = "<group>"; };
@@ -268,6 +297,8 @@
 		B1829D341A6A106800B08E2F /* WeGush */ = {
 			isa = PBXGroup;
 			children = (
+				B1DF0D631A6ABC5D00220294 /* dataClass.h */,
+				B1DF0D641A6ABC5D00220294 /* dataClass.m */,
 				B1829D391A6A106800B08E2F /* AppDelegate.h */,
 				B1829D3A1A6A106800B08E2F /* AppDelegate.m */,
 				B1829D661A6A1D5200B08E2F /* gushEditViewController.h */,
@@ -278,10 +309,12 @@
 				B1829D451A6A106800B08E2F /* Images.xcassets */,
 				B1829D471A6A106800B08E2F /* LaunchScreen.xib */,
 				B1829D351A6A106800B08E2F /* Supporting Files */,
-				D773ED871A7C904200F46396 /* editNavViewController.h */,
-				D773ED881A7C904200F46396 /* editNavViewController.m */,
-				D70A04CF1A8AE5E00006763A /* slideNavController.h */,
-				D70A04D01A8AE5E00006763A /* slideNavController.m */,
+				D7CDCD451A93F0D50065ED62 /* navBar.h */,
+				D7CDCD461A93F0D50065ED62 /* navBar.m */,
+				D7CDCD481A93FC3C0065ED62 /* customlNavController.h */,
+				D7CDCD491A93FC3C0065ED62 /* customlNavController.m */,
+				D7CDCD551A9431820065ED62 /* splashVC.h */,
+				D7CDCD561A9431820065ED62 /* splashVC.m */,
 			);
 			path = WeGush;
 			sourceTree = "<group>";
@@ -289,6 +322,14 @@
 		B1829D351A6A106800B08E2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D773ED871A7C904200F46396 /* editNavViewController.h */,
+				D773ED881A7C904200F46396 /* editNavViewController.m */,
+				D70A04CF1A8AE5E00006763A /* slideNavController.h */,
+				D70A04D01A8AE5E00006763A /* slideNavController.m */,
+				D76BF7531A8FA48A00B43B2B /* bugViewController.h */,
+				D76BF7541A8FA48A00B43B2B /* bugViewController.m */,
+				D76BF7561A8FAB0700B43B2B /* SDiPhoneVersion.h */,
+				D76BF7571A8FAB0700B43B2B /* SDiPhoneVersion.m */,
 				D727011B1A794FA2009CC549 /* google analytics */,
 				D727010E1A789B46009CC549 /* doneNavViewController.h */,
 				D727010F1A789B46009CC549 /* doneNavViewController.m */,
@@ -308,14 +349,16 @@
 				D727006D1A770DC0009CC549 /* SettingsTableViewController.m */,
 				D72701061A788B44009CC549 /* doneViewController.h */,
 				D72701071A788B44009CC549 /* doneViewController.m */,
-				B1DF0D631A6ABC5D00220294 /* dataClass.h */,
-				B1DF0D641A6ABC5D00220294 /* dataClass.m */,
 				B1829D621A6A13FA00B08E2F /* NavigationViewController.h */,
 				B1829D631A6A13FA00B08E2F /* NavigationViewController.m */,
 				B1829D651A6A1C2D00B08E2F /* images */,
 				B1829D611A6A114C00B08E2F /* slideoutmenufiles */,
 				B1829D361A6A106800B08E2F /* Info.plist */,
 				B1829D371A6A106800B08E2F /* main.m */,
+				D7CDCD521A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.h */,
+				D7CDCD531A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.m */,
+				D7CDCD4F1A9427990065ED62 /* TPKeyboardAvoidingScrollView.h */,
+				D7CDCD501A9427990065ED62 /* TPKeyboardAvoidingScrollView.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -398,6 +441,10 @@
 		D7EB13FA1A82DF7B00B0FF6C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D7CDCD5E1A9435040065ED62 /* iPhone4.png */,
+				D7CDCD581A9434F80065ED62 /* iPhone6.png */,
+				D7CDCD591A9434F80065ED62 /* iPhone5.png */,
+				D7CDCD5A1A9434F80065ED62 /* iPhone6plus.png */,
 				D7EB13FB1A82DF7B00B0FF6C /* done */,
 				D7EB14041A82DF7B00B0FF6C /* main */,
 				D7EB14091A82DF7B00B0FF6C /* preview */,
@@ -422,7 +469,7 @@
 		D7EB14041A82DF7B00B0FF6C /* main */ = {
 			isa = PBXGroup;
 			children = (
-				D7EB14541A82EAE100B0FF6C /* logo.png */,
+				D7CDCD4D1A940D140065ED62 /* logo.png */,
 				D7EB144E1A82E09500B0FF6C /* more.png */,
 			);
 			path = main;
@@ -564,9 +611,11 @@
 				D7EB144D1A82DF8100B0FF6C /* yourawesomeness.png in Resources */,
 				B1829D491A6A106800B08E2F /* LaunchScreen.xib in Resources */,
 				D7932A2F1A808A2D00D59CDF /* mail.png in Resources */,
+				D7CDCD5B1A9434F80065ED62 /* iPhone6.png in Resources */,
 				D72700691A75CCE4009CC549 /* icon 2.png in Resources */,
 				D70A04BD1A85B36A0006763A /* 640 X 960.png in Resources */,
 				D7EB14121A82DF7B00B0FF6C /* background-750x1334.png in Resources */,
+				D7CDCD5D1A9434F80065ED62 /* iPhone6plus.png in Resources */,
 				D72700671A75CCCD009CC549 /* icon.png in Resources */,
 				D7EB14161A82DF7B00B0FF6C /* screen-layout-640x960.png in Resources */,
 				D71BFF6A1A85B03E00B48207 /* splashlogo.png in Resources */,
@@ -575,6 +624,7 @@
 				D7EB144C1A82DF8100B0FF6C /* youmakemelaugh.png in Resources */,
 				D7F917951A7589B000672F31 /* splashgush.png in Resources */,
 				D7F9179A1A75901C00672F31 /* Default.png in Resources */,
+				D7CDCD5F1A9435040065ED62 /* iPhone4.png in Resources */,
 				D70A04BF1A85B3780006763A /* 750 X 1334.png in Resources */,
 				B1829D461A6A106800B08E2F /* Images.xcassets in Resources */,
 				D7EB143D1A82DF8100B0FF6C /* ioweyoubigtime.png in Resources */,
@@ -598,10 +648,10 @@
 				D7F9179B1A75901C00672F31 /* Default~iphone.png in Resources */,
 				D7EB14141A82DF7B00B0FF6C /* heart.png in Resources */,
 				D7EB143F1A82DF8100B0FF6C /* sog8ful4u.png in Resources */,
-				D7EB14551A82EAE100B0FF6C /* logo.png in Resources */,
 				D72700651A75CCB2009CC549 /* icon retina2.png in Resources */,
 				D7EB14441A82DF8100B0FF6C /* wemakeateam.png in Resources */,
 				D7F917801A757A1200672F31 /* gushmenu.png in Resources */,
+				D7CDCD5C1A9434F80065ED62 /* iPhone5.png in Resources */,
 				D7F9178E1A75879D00672F31 /* infop.png in Resources */,
 				D7F9179C1A75901C00672F31 /* Default-568h@2x.png in Resources */,
 				D71BFF641A85AE8300B48207 /* splash-750x1334.png in Resources */,
@@ -611,6 +661,7 @@
 				D7932A2D1A808A2D00D59CDF /* settings2.png in Resources */,
 				D7EB14391A82DF8100B0FF6C /* awesomewhatuare.png in Resources */,
 				D72700611A75CC57009CC549 /* icon 3.png in Resources */,
+				D7CDCD4E1A940D140065ED62 /* logo.png in Resources */,
 				D7EB14461A82DF8100B0FF6C /* whenigrowup.png in Resources */,
 				D7EB14451A82DF8100B0FF6C /* whatwouldido.png in Resources */,
 				D7EB14151A82DF7B00B0FF6C /* quotes.png in Resources */,
@@ -633,15 +684,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D76BF7551A8FA48A00B43B2B /* bugViewController.m in Sources */,
 				B1829D3B1A6A106800B08E2F /* AppDelegate.m in Sources */,
 				B1829D641A6A13FA00B08E2F /* NavigationViewController.m in Sources */,
 				D7F9176A1A74A6EA00672F31 /* navViewController.m in Sources */,
+				D76BF7581A8FAB0700B43B2B /* SDiPhoneVersion.m in Sources */,
+				D7CDCD4A1A93FC3C0065ED62 /* customlNavController.m in Sources */,
 				D727010D1A788F4E009CC549 /* sonsorWVViewController.m in Sources */,
 				D7F9176D1A74AE0C00672F31 /* webViewController.m in Sources */,
 				D70A04D11A8AE5E00006763A /* slideNavController.m in Sources */,
+				D7CDCD571A9431820065ED62 /* splashVC.m in Sources */,
 				D7F917701A74B02F00672F31 /* aboutViewController.m in Sources */,
 				D773ED891A7C904200F46396 /* editNavViewController.m in Sources */,
 				D7F917761A74B39200672F31 /* feedbackViewController.m in Sources */,
+				D7CDCD471A93F0D50065ED62 /* navBar.m in Sources */,
+				D7CDCD541A94281C0065ED62 /* UIScrollView+TPKeyboardAvoidingAdditions.m in Sources */,
 				B1829D681A6A1D5200B08E2F /* gushEditViewController.m in Sources */,
 				D72701101A789B46009CC549 /* doneNavViewController.m in Sources */,
 				D76D30351A6DF27F00F726F4 /* myGushesTableViewController.m in Sources */,
@@ -650,6 +707,7 @@
 				B1829D3E1A6A106800B08E2F /* FirstViewController.m in Sources */,
 				B1829D381A6A106800B08E2F /* main.m in Sources */,
 				D727006E1A770DC0009CC549 /* SettingsTableViewController.m in Sources */,
+				D7CDCD511A9427990065ED62 /* TPKeyboardAvoidingScrollView.m in Sources */,
 				B13DC2A21A6AB76A0048B831 /* SWRevealViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -731,6 +789,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "dc52e1ae-10c6-48cf-a2e5-e8dc1cb64a60";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -767,6 +826,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PROVISIONING_PROFILE = "dc52e1ae-10c6-48cf-a2e5-e8dc1cb64a60";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -778,7 +838,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Henry Katz (URM3J5KJ5U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Henry Katz (URM3J5KJ5U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = WeGush/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -798,7 +858,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-2";
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Henry Katz (URM3J5KJ5U)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Henry Katz (URM3J5KJ5U)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				INFOPLIST_FILE = WeGush/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

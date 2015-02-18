@@ -1,20 +1,15 @@
 //
-//  feedbackViewController.m
+//  bugViewController.m
 //  WeGush
 //
-//  Created by Daniel Katz on 1/25/15.
+//  Created by Daniel Katz on 2/14/15.
 //  Copyright (c) 2015 Stratton Apps. All rights reserved.
 //
 
-#import "feedbackViewController.h"
-#import <MessageUI/MessageUI.h>
+#import "bugViewController.h"
 #import "SWRevealViewController.h"
-@interface feedbackViewController ()
-
-@end
-
-@implementation feedbackViewController
-
+#import "SDiPhoneVersion.h"
+@implementation bugViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -31,8 +26,58 @@
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    NSString *emailTitle = @"WeGush Issue";
-    NSString *messageBody = nil;
+    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        iOSVersion = [NSString stringWithFormat:@"iOS version is %f and lower",6.0];
+        NSLog(@"%@",iOSVersion);
+    } else {
+        iOSVersion = [NSString stringWithFormat:@"iOS version is %f and above",7.0];
+        NSLog(@"%@",iOSVersion);
+
+    }
+    if ([SDiPhoneVersion deviceVersion] == iPhone4){
+        device = [NSString stringWithFormat:@"Device: iPhone 4"];
+        NSLog(@"%@",device);
+
+        
+    }
+    else if ([SDiPhoneVersion deviceVersion] == iPhone4S){
+        device = [NSString stringWithFormat:@"Device: iPhone 4s"];
+        NSLog(@"%@",device);
+
+        
+    }
+    else if ([SDiPhoneVersion deviceVersion] == iPhone5){
+        device = [NSString stringWithFormat:@"Device: iPhone 5"];
+        NSLog(@"%@",device);
+
+
+    }
+    else if ([SDiPhoneVersion deviceVersion] == iPhone5S){
+        device = [NSString stringWithFormat:@"Device: iPhone 5s"];
+        NSLog(@"%@",device);
+
+
+    }
+    else if ([SDiPhoneVersion deviceVersion] == iPhone5C){
+        device = [NSString stringWithFormat:@"Device: iPhone 5c"];
+        NSLog(@"%@",device);
+
+
+    }
+    else if ([SDiPhoneVersion deviceVersion] == iPhone6){
+        device = [NSString stringWithFormat:@"Device: iPhone 6"];
+        NSLog(@"%@",device);
+
+
+    }
+    else {
+        device = [NSString stringWithFormat:@"Device: iPhone 6 plus"];
+        NSLog(@"%@",device);
+
+  
+    }
+    NSString *emailTitle = @"WeGush Feedback";
+    NSString *messageBody = [NSString stringWithFormat:@"%@ , %@ Bug:",iOSVersion,device];
     NSArray *toRecipents = [NSArray arrayWithObject:@"dgkatz@gmail.com"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
@@ -43,11 +88,10 @@
     
     // Present mail view controller on screen
     mc.navigationBar.tintColor = [UIColor colorWithRed:142/255.0 green:225/255.0 blue:232/255.0 alpha:1.0f];
-
-    [self presentViewController:mc animated:YES completion:NULL];
     
-}
+    [self presentViewController:mc animated:YES completion:NULL];
 
+}
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
     switch (result)
@@ -70,26 +114,13 @@
     
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
-    UIAlertView *thanks = [[UIAlertView alloc]initWithTitle:@"Thankyou for the feedback" message:@"Your feedback is valued and encouraged, help us be better so you can be happier!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
-    [thanks show];
-
 }
+
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end
