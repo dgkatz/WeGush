@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface splashVC : UIViewController{
+@interface splashVC : UIViewController<NSURLConnectionDelegate>{
     UIImage *image;
     NSTimer *timer;
+    NSMutableData *_responseData;
+
 }
 @property (weak, nonatomic) IBOutlet UIImageView *splash;
-
+@property (weak, nonatomic)NSMutableArray *messageData;
 @end

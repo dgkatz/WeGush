@@ -15,6 +15,7 @@
 #import "GAIFields.h"
 #import "editNavViewController.h"
 #import "gushEditViewController.h"
+#import "splashVC.h"
 @interface FirstViewController ()
 @end
 
@@ -25,6 +26,17 @@
 @synthesize messageTableView;
 - (void)viewDidLoad {
     [super viewDidLoad];
+    dataClass *vc = [dataClass getInstance];
+    NSLog(@" sponsor info in main screen ----> %@",vc.sponsorInfo);
+    if ([vc.sponsorInfo count] == 0) {
+        [_sponsorButton setTitle:@"Sponsor" forState:UIControlStateNormal];
+
+    }
+    else{
+        NSString *label = [vc.sponsorInfo objectAtIndex:0];
+        [_sponsorButton setTitle:label forState:UIControlStateNormal];
+    }
+    NSLog(@"value of message array at viewdidload %@",vc.messageData);
     [self.navigationController setValue:[[navBar alloc]init]forKeyPath:@"navigationBar"];
     [self.navigationController.navigationBar setTranslucent:NO];
     UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, self.navigationController.navigationBar.frame.size.height,self.navigationController.navigationBar.frame.size.width, 1)];
@@ -32,7 +44,7 @@
     [self.navigationController.navigationBar addSubview:overlayView];
     self.screenName = @"Message Screen";
     messageTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-     tableData = [NSArray arrayWithObjects:@"What would I do without you?", @"#SoGr8ful4U",@"You go, girl!",@"You are truly amazing!",@"awesome [aw-suh m] adjective: what you are", @"Your awesomeness is unparalleled.", @"When I grow up....I want to be just like you!", @"I'm so blessed to have you as a friend.", @"Thanks for letting me over-share. You’re a great listener.", @"I cherish the time we spend together.",@"You are my superhero!",@"I owe you big time. Thank you!",@"You’re a lifesaver!",@"We make a spectacular team!",@"Together, we are unstoppable!",@"THX for making me LOL.",@"You make me laugh, even when I want to cry.",@"Awwww, that was so sweet of you!",@"You totally made my day!",@"You made a difference today.", nil];
+    tableData = [NSArray arrayWithObjects:@"What would I do without you?", @"#SoGr8ful4U",@"You go, girl!",@"You are truly amazing!",@"awesome [aw-suh m] adjective: what you are", @"Your awesomeness is unparalleled.", @"When I grow up....I want to be just like you!", @"I'm so blessed to have you as a friend.", @"Thanks for letting me over-share. You’re a great listener.", @"I cherish the time we spend together.",@"You are my superhero!",@"I owe you big time. Thank you!",@"You’re a lifesaver!",@"We make a spectacular team!",@"Together, we are unstoppable!",@"THX for making me LOL.",@"You make me laugh, even when I want to cry.",@"Awwww, that was so sweet of you!",@"You totally made my day!",@"You made a difference today.", nil];
     
     imageArray = [NSArray arrayWithObjects:@"whatwouldido.png",@"sog8ful4u.png",@"yougogirl.png",@"youareamazing.png",@"awesomewhatuare.png",@"yourawesomeness.png",@"whenigrowup.png",@"iamsoblessed.png",@"thanksforlettingshare.png",@"icherishthetime.png",@"youaremysuperhero.png",@"ioweyoubigtime.png",@"uralifesaver.png",@"wemakeateam.png",@"togetherunstoppable.png",@"thxforlol.png",@"youmakemelaugh.png",@"awwthatwassweet.png",@"youmademyday.png",@"youmadeadifference.png", nil];
     _barButton.target = self.revealViewController;
@@ -46,10 +58,6 @@
 -(void)viewDidAppear:(BOOL)animated{
     self.screenName = @"Message Screen";
     messageTableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
-    tableData = [NSArray arrayWithObjects:@"What would I do without you?", @"#SoGr8ful4U",@"You go, girl!",@"You are truly amazing!",@"awesome [aw-suh m] adjective: what you are", @"Your awesomeness is unparalleled.", @"When I grow up....I want to be just like you!", @"I'm so blessed to have you as a friend.", @"Thanks for letting me over-share. You’re a great listener.", @"I cherish the time we spend together.",@"You are my superhero!",@"I owe you big time. Thank you!",@"You’re a lifesaver!",@"We make a spectacular team!",@"Together, we are unstoppable!",@"THX for making me LOL.",@"You make me laugh, even when I want to cry.",@"Awwww, that was so sweet of you!",@"You totally made my day!",@"You made a difference today.", nil];
-    
-    imageArray = [NSArray arrayWithObjects:@"whatwouldido.png",@"sog8ful4u.png",@"yougogirl.png",@"youareamazing.png",@"awesomewhatuare.png",@"yourawesomeness.png",@"whenigrowup.png",@"iamsoblessed.png",@"thanksforlettingshare.png",@"icherishthetime.png",@"youaremysuperhero.png",@"ioweyoubigtime.png",@"uralifesaver.png",@"wemakeateam.png",@"togetherunstoppable.png",@"thxforlol.png",@"youmakemelaugh.png",@"awwthatwassweet.png",@"youmademyday.png",@"youmadeadifference.png", nil];
-
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
@@ -57,6 +65,8 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    dataClass *obj = [dataClass getInstance];
+    
     static NSString *simpleTableIdentifier = @"SimpleTableItem";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
@@ -64,15 +74,20 @@
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    if ([cell respondsToSelector:@selector(layoutMargins)]) {
-        cell.layoutMargins = UIEdgeInsetsZero;
+    if ([obj.messageData count] < 20) {
+        cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
     }
-    cell.textLabel.text = [tableData objectAtIndex:indexPath.row];
+    else{
+    cell.textLabel.text = [obj.messageData objectAtIndex:indexPath.row];
+    }
+    UIView *selectView = [[UIView alloc]init];
+    selectView.backgroundColor = [UIColor colorWithRed:68/255.0 green:161/255.0 blue:175/255.0 alpha:1.0f];
+    cell.selectedBackgroundView = selectView;
     cell.textLabel.numberOfLines = 0;
     cell.textLabel.font = [UIFont systemFontOfSize:20];
     cell.textLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.textLabel.textColor = [UIColor whiteColor];
-
+    
     return cell;
 }
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -104,11 +119,10 @@
         [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"UX"
                                                               action:@"touch"
                                                                label:[tableData objectAtIndex:indexPath.row]
-                                    value:nil] build]];
+                                                               value:nil] build]];
         [tracker set:kGAIScreenName value:nil];
         dataClass *obj = [dataClass getInstance];
         obj.chosenGush = [imageArray objectAtIndex:indexPath.row];
     }
 }
-
 @end

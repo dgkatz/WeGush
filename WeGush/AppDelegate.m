@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "GAI.h"
 #import "GAIFields.h"
+#import "Appirater.h"
 @interface AppDelegate ()
 
 @end
@@ -25,6 +26,13 @@
     [UIUserNotificationSettings settingsForTypes:types categories:nil];
     
     [[UIApplication sharedApplication] registerUserNotificationSettings:mySettings];
+    [Appirater setAppId:@"770699556"];
+    [Appirater setDaysUntilPrompt:0];
+    [Appirater setUsesUntilPrompt:5];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:3];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     
     // 2
@@ -56,14 +64,6 @@
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
 {
-    UIApplicationState state = [application applicationState];
-    if (state == UIApplicationStateActive) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Reminder"
-                                                        message:notification.alertBody
-                                                       delegate:self cancelButtonTitle:@"OK"
-                                              otherButtonTitles:nil];
-        [alert show];
-    }
     
     // Request to reload table view data
     [[NSNotificationCenter defaultCenter] postNotificationName:@"reloadData" object:self];

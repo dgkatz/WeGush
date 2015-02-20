@@ -8,6 +8,11 @@
 
 #import "NavigationViewController.h"
 #import "SWRevealViewController.h"
+#import "GAITrackedViewController.h"
+#import "GAITracker.h"
+#import "GAIFields.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAI.h"
 @interface NavigationViewController ()
 
 @end
@@ -28,7 +33,18 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+-(void)viewDidAppear:(BOOL)animated{
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName
+           value:@"Settings Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
 
+}
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {

@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface doneViewController : UIViewController
+@interface doneViewController : UIViewController<NSURLConnectionDelegate>{
+    NSMutableURLRequest *request;
+    NSMutableData *_responseData;
+    __weak IBOutlet UILabel *countLabel;
+    __weak IBOutlet UIImageView *sponsorImage;
+    __weak IBOutlet UIButton *sponsorButton;
+    __weak IBOutlet UIView *view;
+    
+    __weak IBOutlet UILabel *attributionLabel;
+    __weak IBOutlet UILabel *quoteLabel;
+}
 @property (weak,nonatomic)NSString *test;
 @end

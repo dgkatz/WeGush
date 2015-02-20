@@ -15,7 +15,6 @@
     
     IBOutlet UITextField *extraTextTF;
     
-    __weak IBOutlet UILabel *optLabel;
     
 }
 @property (weak, nonatomic) IBOutlet UIImageView *gushImageView;

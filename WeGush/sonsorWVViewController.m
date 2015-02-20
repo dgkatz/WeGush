@@ -8,6 +8,7 @@
 
 #import "sonsorWVViewController.h"
 #import "SWRevealViewController.h"
+#import "dataClass.h"
 @interface sonsorWVViewController ()
 
 @end
@@ -26,9 +27,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    dataClass *obj = [dataClass getInstance];
     _homeButton.target = self;
     _homeButton.action = @selector(segue);
-    NSString *strURL = @"http://www.brighamandwomens.org";
+    NSString *strURL = [obj.sponsorInfo objectAtIndex:3];
     NSURL *url = [NSURL URLWithString:strURL];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:urlRequest];

@@ -9,6 +9,10 @@
 #import "SettingsTableViewController.h"
 #import "SWRevealViewController.h"
 #import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
+#import "GAITrackedViewController.h"
+#import "dataClass.h"
 @interface SettingsTableViewController ()
 
 @end
@@ -37,16 +41,26 @@ int i;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName
+           value:@"Settings Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
     [self.navigationController setValue:[[UINavigationBar alloc]init]forKeyPath:@"navigationBar"];
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    array1 = [NSArray arrayWithObjects: @"Day",@"Week",@"Month",@"Year",@"Never", nil];
-    array2 = [NSArray arrayWithObjects:@"Allow Google Analytics", nil];
+    array1 = [NSArray arrayWithObjects: @"Once a day",@"Every few days",@"Once a week",@"Never", nil];
 }
 
-
+-(void)viewDidAppear:(BOOL)animated{
+    
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -57,23 +71,28 @@ int i;
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    if (section==0)
-    {
+
         return [array1 count];
-    }
-    else {
-        return [array2 count];
-    }
+
     
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    dataClass *obj = [dataClass getInstance];
+    NSString *reminderBody;
+    if ([obj.reminderData count] == 0) {
+        reminderBody = @"Don't forget to send a Gush!";
+    }
+    else{
+        int r = arc4random_uniform([obj.reminderData count]);
+        reminderBody = [NSString stringWithFormat:@"%@",[obj.reminderData objectAtIndex:r]];
+    }
     // Uncheck the previous checked row
     if(self.checkedIndexPath)
     {
@@ -95,10 +114,11 @@ int i;
         self.checkedIndexPath = indexPath;
         if (indexPath.row == 0) {
             NSLog(@"path = 0");
+            _repeatSettings = @"day";
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:5];
-            localNotification.repeatInterval = NSMinuteCalendarUnit;
-            localNotification.alertBody = @"Daily Reminder To Send A Gush";
+            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:360];
+            localNotification.repeatInterval = NSDayCalendarUnit;
+            localNotification.alertBody = reminderBody;
             localNotification.alertAction = @"Show me the item";
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
@@ -107,10 +127,11 @@ int i;
         }
         else if (indexPath.row == 1){
             NSLog(@"path = 1");
+            _repeatSettings = @"every few days";
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:120];
-            localNotification.repeatInterval = NSWeekCalendarUnit;
-            localNotification.alertBody = @"Weekly Reminder To Send A Gush";
+            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:360];
+            localNotification.repeatInterval = NSDayCalendarUnit;
+            localNotification.alertBody = reminderBody;
             localNotification.alertAction = @"Show me the item";
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
@@ -120,10 +141,11 @@ int i;
         }
         else if (indexPath.row == 2){
             NSLog(@"path = 2");
+            _repeatSettings = @"once a week";
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
-            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:120];
-            localNotification.repeatInterval = NSMonthCalendarUnit;
-            localNotification.alertBody = @"Monthly Reminder To Send A Gush";
+            localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:360];
+            localNotification.repeatInterval = NSWeekCalendarUnit;
+            localNotification.alertBody = reminderBody;
             localNotification.alertAction = @"Show me the item";
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
@@ -133,16 +155,20 @@ int i;
         }
         else if (indexPath.row == 3){
             NSLog(@"path = 3");
+            _repeatSettings = @"never";
             UILocalNotification* localNotification = [[UILocalNotification alloc] init];
             localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:120];
             localNotification.repeatInterval = NSYearCalendarUnit;
-            localNotification.alertBody = @"Yearly Reminder To Send A Gush";
+            localNotification.alertBody = reminderBody;
             localNotification.alertAction = @"Show me the item";
             localNotification.timeZone = [NSTimeZone defaultTimeZone];
             localNotification.applicationIconBadgeNumber = [[UIApplication sharedApplication] applicationIconBadgeNumber] + 1;
             
             [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
             
+        }
+        else{
+             [[UIApplication sharedApplication] cancelAllLocalNotifications];
         }
         
         
@@ -157,7 +183,7 @@ int i;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-    if (indexPath.section==0) {
+    
         cell.textLabel.text = [array1 objectAtIndex:indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         if([self.checkedIndexPath isEqual:indexPath])
@@ -168,23 +194,14 @@ int i;
         {
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
-        
-    }
-    else if(indexPath.section==1){
-        cell.textLabel.text = [array2 objectAtIndex:indexPath.row];
-        
-    }
+
     return cell;
     
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
-    if(section == 0){
-        return @"Reminder Frequency";
-    }
-    else {
-        return @"More";
-    }
+    return @"Reminder Frequency";
+
     
 }
 @end

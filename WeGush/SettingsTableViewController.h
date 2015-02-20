@@ -11,5 +11,5 @@
 @interface SettingsTableViewController : UITableViewController
 @property(weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (nonatomic, retain) NSIndexPath* checkedIndexPath;
-
+@property(nonatomic,retain)NSString *repeatSettings;
 @end

@@ -15,6 +15,7 @@
 #import "GAIDictionaryBuilder.h"
 #import "GAI.h"
 #import "GAIFields.h"
+#import <QuartzCore/QuartzCore.h>
 @interface gushEditViewController ()<UITextViewDelegate,MFMailComposeViewControllerDelegate,MFMessageComposeViewControllerDelegate, UIActionSheetDelegate>
 @end
 NSString *extraString;

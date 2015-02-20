@@ -8,6 +8,10 @@
 
 #import "aboutViewController.h"
 #import "SWRevealViewController.h"
+#import "GAI.h"
+#import "GAITrackedViewController.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 @interface aboutViewController ()
 
 @end
@@ -22,10 +26,22 @@
     }
     return self;
 }
-
+-(void)viewDidAppear:(BOOL)animated{
+    
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName
+           value:@"About Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
         [self.navigationController setValue:[[UINavigationBar alloc]init]forKeyPath:@"navigationBar"];
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);

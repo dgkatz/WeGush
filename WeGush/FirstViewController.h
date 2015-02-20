@@ -13,6 +13,7 @@
 @property(weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
+@property (strong, nonatomic) IBOutlet UIButton *sponsorButton;
 
 @end
 

@@ -14,8 +14,13 @@
 @synthesize gushesList;
 @synthesize chosenGush;
 @synthesize messageData;
-
-
+@synthesize gushCount;
+@synthesize sponsorInfo;
+@synthesize imageURLData;
+@synthesize dataVersion;
+@synthesize reminderData;
+@synthesize quoteAttributeData;
+@synthesize quoteData;
 static dataClass *instance = nil;
 
 
