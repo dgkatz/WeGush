@@ -33,7 +33,9 @@
  * http://arashpayan.com
  * Copyright 2012 Arash Payan. All rights reserved.
  */
-
+#import "GAIFields.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
 #import "Appirater.h"
 #import <SystemConfiguration/SCNetworkReachability.h>
 #include <netinet/in.h>
@@ -271,17 +273,17 @@ static BOOL _alwaysUseMainBundle = NO;
 - (void)showRatingAlert:(BOOL)displayRateLaterButton {
   UIAlertView *alertView = nil;
   if (displayRateLaterButton) {
-  	alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle
-                                           message:self.alertMessage
-                                          delegate:self
-                                 cancelButtonTitle:self.alertCancelTitle
-                                 otherButtonTitles:self.alertRateTitle, self.alertRateLaterTitle, nil];
+      alertView = [[UIAlertView alloc] initWithTitle:@"Rate WeGush"
+                                             message:@"If you enjoy using WeGush, would you mind taking a moment to rate it? It won't take more than a minute. Thanks for your support!"
+                                            delegate:self
+                                   cancelButtonTitle:self.alertCancelTitle
+                                   otherButtonTitles:@"Rate WeGush", self.alertRateLaterTitle, nil];
   } else {
-  	alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle
-                                           message:self.alertMessage
-                                          delegate:self
-                                 cancelButtonTitle:self.alertCancelTitle
-                                 otherButtonTitles:self.alertRateTitle, nil];
+  	  	alertView = [[UIAlertView alloc] initWithTitle:self.alertTitle
+                                               message:self.alertMessage
+                                              delegate:self
+                                     cancelButtonTitle:self.alertCancelTitle
+                                     otherButtonTitles:self.alertRateTitle, nil];
   }
 
 	self.ratingAlert = alertView;
@@ -392,7 +394,7 @@ static BOOL _alwaysUseMainBundle = NO;
 		useCount++;
 		[userDefaults setInteger:useCount forKey:kAppiraterUseCount];
 		if (_debug)
-			NSLog(@"APPIRATER Use count: %@", @(useCount));
+			NSLog(@"APPIRATER Use count: %ld", (long)useCount);
 	}
 	else
 	{
@@ -662,6 +664,14 @@ static BOOL _alwaysUseMainBundle = NO;
 		case 0:
 		{
 			// they don't want to rate it
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            
+            [tracker set:kGAIScreenName value:nil];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Rate This App"
+                                                                  action:@"Pop-up"
+                                                                   label:@"Never"
+                                                                   value:nil] build]];
+            [tracker set:kGAIScreenName value:nil];
 			[userDefaults setBool:YES forKey:kAppiraterDeclinedToRate];
 			[userDefaults synchronize];
 			if(delegate && [delegate respondsToSelector:@selector(appiraterDidDeclineToRate:)]){
@@ -672,6 +682,14 @@ static BOOL _alwaysUseMainBundle = NO;
 		case 1:
 		{
 			// they want to rate it
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            
+            [tracker set:kGAIScreenName value:nil];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Rate This App"
+                                                                  action:@"Pop-up"
+                                                                   label:@"Rate App"
+                                                                   value:nil] build]];
+            [tracker set:kGAIScreenName value:nil];
 			[Appirater rateApp];
 			if(delegate&& [delegate respondsToSelector:@selector(appiraterDidOptToRate:)]){
 				[delegate appiraterDidOptToRate:self];
@@ -679,13 +697,24 @@ static BOOL _alwaysUseMainBundle = NO;
 			break;
 		}
 		case 2:
+        {
 			// remind them later
+            
 			[userDefaults setDouble:[[NSDate date] timeIntervalSince1970] forKey:kAppiraterReminderRequestDate];
 			[userDefaults synchronize];
+            id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+            
+            [tracker set:kGAIScreenName value:nil];
+            [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Rate This App"
+                                                                  action:@"Pop-up"
+                                                                   label:@"Maybe later"
+                                                                   value:nil] build]];
+            [tracker set:kGAIScreenName value:nil];
 			if(delegate && [delegate respondsToSelector:@selector(appiraterDidOptToRemindLater:)]){
 				[delegate appiraterDidOptToRemindLater:self];
 			}
 			break;
+        }
 		default:
 			break;
 	}

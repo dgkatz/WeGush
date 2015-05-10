@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "GAITrackedViewController.h"
-@interface FirstViewController :GAITrackedViewController<UITableViewDelegate, UITableViewDataSource>
+#import "SWRevealViewController.h"
+@interface FirstViewController :GAITrackedViewController<UITableViewDelegate, UITableViewDataSource,SWRevealViewControllerDelegate,UIAlertViewDelegate,NSURLConnectionDelegate>
 
 @property(weak,nonatomic) IBOutlet UIBarButtonItem *barButton;
 @property (weak, nonatomic) IBOutlet UITableView *messageTableView;
 @property (weak, nonatomic) IBOutlet UINavigationItem *navItem;
 @property (strong, nonatomic) IBOutlet UIButton *sponsorButton;
+@property (strong, nonatomic)  UIView *shadowView;
 
 @end
 

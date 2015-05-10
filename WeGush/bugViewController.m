@@ -9,6 +9,11 @@
 #import "bugViewController.h"
 #import "SWRevealViewController.h"
 #import "SDiPhoneVersion.h"
+#import "SWRevealViewController.h"
+#import "initNavController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+#import "GAIFields.h"
 @implementation bugViewController
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,63 +27,61 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    id tracker = [[GAI sharedInstance] defaultTracker];
+    
+    // This screen name value will remain set on the tracker and sent with
+    // hits until it is set to a new value or to nil.
+    [tracker set:kGAIScreenName
+           value:@"Feedback Screen"];
+    
+    // manual screen tracking
+    [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
+
         [self.navigationController setValue:[[UINavigationBar alloc]init]forKeyPath:@"navigationBar"];
-    _barButton.target = self.revealViewController;
-    _barButton.action = @selector(revealToggle:);
-    [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
+        if (floor(NSFoundationVersionNumber) <= NSFoundationVersionNumber_iOS_6_1) {
         iOSVersion = [NSString stringWithFormat:@"iOS version is %f and lower",6.0];
-        NSLog(@"%@",iOSVersion);
     } else {
         iOSVersion = [NSString stringWithFormat:@"iOS version is %f and above",7.0];
-        NSLog(@"%@",iOSVersion);
 
     }
     if ([SDiPhoneVersion deviceVersion] == iPhone4){
         device = [NSString stringWithFormat:@"Device: iPhone 4"];
-        NSLog(@"%@",device);
 
         
     }
     else if ([SDiPhoneVersion deviceVersion] == iPhone4S){
         device = [NSString stringWithFormat:@"Device: iPhone 4s"];
-        NSLog(@"%@",device);
 
         
     }
     else if ([SDiPhoneVersion deviceVersion] == iPhone5){
         device = [NSString stringWithFormat:@"Device: iPhone 5"];
-        NSLog(@"%@",device);
 
 
     }
     else if ([SDiPhoneVersion deviceVersion] == iPhone5S){
         device = [NSString stringWithFormat:@"Device: iPhone 5s"];
-        NSLog(@"%@",device);
 
 
     }
     else if ([SDiPhoneVersion deviceVersion] == iPhone5C){
         device = [NSString stringWithFormat:@"Device: iPhone 5c"];
-        NSLog(@"%@",device);
 
 
     }
     else if ([SDiPhoneVersion deviceVersion] == iPhone6){
         device = [NSString stringWithFormat:@"Device: iPhone 6"];
-        NSLog(@"%@",device);
 
 
     }
     else {
         device = [NSString stringWithFormat:@"Device: iPhone 6 plus"];
-        NSLog(@"%@",device);
 
   
     }
     NSString *emailTitle = @"WeGush Feedback";
-    NSString *messageBody = [NSString stringWithFormat:@"%@ , %@ Bug:",iOSVersion,device];
-    NSArray *toRecipents = [NSArray arrayWithObject:@"dgkatz@gmail.com"];
+    NSString *messageBody = [NSString stringWithFormat:@"\n\n\n\n\n----------------------------\nDevice Details:\n Platform: %@\n%@\nApp Version: 1.12\nBug:",iOSVersion,device];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"info@WeGush.com"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
@@ -92,26 +95,33 @@
     [self presentViewController:mc animated:YES completion:NULL];
 
 }
+-(void)viewDidAppear:(BOOL)animated{
+    if ([status isEqualToString:@"next"]) {
+        status = @"";
+        SWRevealViewController *NVC = [self.storyboard instantiateViewControllerWithIdentifier:@"blah"];
+        [self presentViewController:NVC animated:YES completion:nil];
+
+    }
+}
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    switch (result)
-    {
-        case MFMailComposeResultCancelled:
-            NSLog(@"Mail cancelled");
-            break;
-        case MFMailComposeResultSaved:
-            NSLog(@"Mail saved");
-            break;
-        case MFMailComposeResultSent:
-            NSLog(@"Mail sent");
-            break;
-        case MFMailComposeResultFailed:
-            NSLog(@"Mail sent failure: %@", [error localizedDescription]);
-            break;
-        default:
-            break;
-    }
     
+    if (result == MFMailComposeResultCancelled) {
+        
+        status = @"next";
+    }
+    else if (result == MFMailComposeResultSaved){
+        status = @"next";
+
+    }
+    else if (result == MFMailComposeResultSent){
+        status = @"next";
+
+    }
+    else{
+        status = @"next";
+
+    }
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
 }

@@ -11,27 +11,24 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iPhone6plus.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-fT-L7A">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-750x1334 copy.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRt-fT-L7A">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" red="0.3294117647" green="0.57647058819999997" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="rRt-fT-L7A" secondAttribute="bottom" id="5xc-5P-41i"/>
-                <constraint firstItem="rRt-fT-L7A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="9B7-5f-cLz"/>
-                <constraint firstItem="rRt-fT-L7A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="C9I-2b-p6h"/>
-                <constraint firstAttribute="trailing" secondItem="rRt-fT-L7A" secondAttribute="trailing" id="DJt-g8-bcZ"/>
-                <constraint firstAttribute="bottom" secondItem="rRt-fT-L7A" secondAttribute="bottom" id="IBR-wS-fev"/>
-                <constraint firstAttribute="trailing" secondItem="rRt-fT-L7A" secondAttribute="trailing" id="UgQ-R0-BW6"/>
-                <constraint firstItem="rRt-fT-L7A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="gMv-QJ-YTx"/>
-                <constraint firstItem="rRt-fT-L7A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kdE-G6-LM1"/>
+                <constraint firstItem="rRt-fT-L7A" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Rh6-RH-z7U"/>
+                <constraint firstAttribute="bottom" secondItem="rRt-fT-L7A" secondAttribute="bottom" id="Vys-aT-OKr"/>
+                <constraint firstItem="rRt-fT-L7A" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WoU-iS-ctG"/>
+                <constraint firstAttribute="trailing" secondItem="rRt-fT-L7A" secondAttribute="trailing" id="uJI-Sj-zTr"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+            <point key="canvasLocation" x="138" y="261"/>
         </view>
     </objects>
     <resources>
-        <image name="iPhone6plus.png" width="1242" height="2208"/>
+        <image name="background-750x1334 copy.png" width="640" height="1136"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

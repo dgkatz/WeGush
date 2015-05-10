@@ -19,11 +19,10 @@ static CGFloat const CustomNavigationBarHeightDelta = CustomNavigationBarHeight 
         //      UIColor *titleColor = [[HITheme currentTheme] fontColorForLabelForLocation:HIThemeLabelNavigationTitle];
         //      UIFont *titleFont = [[HITheme currentTheme] fontForLabelForLocation:HIThemeLabelNavigationTitle];
         [self setTitleVerticalPositionAdjustment:-100 forBarMetrics:UIBarMetricsDefault];
-        UIImageView *imgv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"logo.png"]];
+        UIImageView *imgv = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"MainLogo.png"]];
         int result = frame.size.width - 160;
         int next = result/2;
         imgv.frame = CGRectMake(- next, 12, 131, 47.5);
-        NSLog(@"%f",imgv.frame.origin.x);
         [self addSubview:imgv];
         UIView *overlayView = [[UIView alloc] initWithFrame:CGRectMake(0, frame.size.height, frame.size.width, 1)];
         [overlayView setBackgroundColor:[UIColor colorWithRed:84/255.0 green:173/255.0 blue:187/255.0 alpha:1.0f]];
@@ -32,7 +31,7 @@ static CGFloat const CustomNavigationBarHeightDelta = CustomNavigationBarHeight 
         
         CGAffineTransform translate = CGAffineTransformMakeTranslation(0, -CustomNavigationBarHeightDelta / 2.0);
         self.transform = translate;
-
+        
         [self resetBackgroundImageFrame];
         
     }
@@ -63,5 +62,33 @@ static CGFloat const CustomNavigationBarHeightDelta = CustomNavigationBarHeight 
 {
     [super setFrame:frame];
     [self resetBackgroundImageFrame];
+}
+- (void)layoutSubviews
+{
+    [super layoutSubviews];
+    
+    NSArray *subviews = self.subviews;
+    for (UIView *view in subviews) {
+        if ([view isKindOfClass:[UIButton class]]) {
+            view.frame = ({
+                CGRect frame = view.frame;
+                CGFloat navigationBarHeight = CGRectGetHeight(self.frame);
+                CGFloat buttonHeight = CGRectGetHeight(view.frame);
+                frame.origin.y = (navigationBarHeight - buttonHeight) / 2.0f;
+                frame;
+            });
+        }
+        else if ([view isKindOfClass:[UIView class]]){
+            view.frame = ({
+                CGRect frame = view.frame;
+                CGFloat navigationBarWidth = CGRectGetWidth(self.frame);
+                CGFloat viewWidth = CGRectGetWidth(view.frame);
+                frame.origin.x = (navigationBarWidth - viewWidth) / 2.0f;
+                frame;
+                
+            });
+            
+        }
+    }
 }
 @end

@@ -17,6 +17,8 @@
     
     
 }
+@property (strong) UIActivityIndicatorView *mySpinner;
+
 @property (weak, nonatomic) IBOutlet UIImageView *gushImageView;
 
 

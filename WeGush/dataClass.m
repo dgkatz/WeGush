@@ -9,6 +9,7 @@
 #import "dataClass.h"
 
 @implementation dataClass
+@synthesize doneLoading;
 @synthesize target;
 @synthesize username;
 @synthesize gushesList;
@@ -21,6 +22,11 @@
 @synthesize reminderData;
 @synthesize quoteAttributeData;
 @synthesize quoteData;
+@synthesize chosenIndex;
+@synthesize chosenMessage;
+@synthesize imageData;
+@synthesize twiceADay;
+@synthesize totalGushesSent;
 static dataClass *instance = nil;
 
 

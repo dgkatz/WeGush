@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface NavigationViewController : UITableViewController
+#import "Appirater.h"
+#import "AppiraterDelegate.h"
+#import <MessageUI/MessageUI.h>
+@interface NavigationViewController : UITableViewController<AppiraterDelegate,MFMailComposeViewControllerDelegate>{
+    NSString *iOSVersion;
+    NSString *device;
+    NSString *status;
+}
+@property (strong, nonatomic) IBOutlet UITableView *av;
 
 @end

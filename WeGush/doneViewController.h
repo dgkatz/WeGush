@@ -10,14 +10,18 @@
 
 @interface doneViewController : UIViewController<NSURLConnectionDelegate>{
     NSMutableURLRequest *request;
+    NSMutableURLRequest *countRequest;
     NSMutableData *_responseData;
     __weak IBOutlet UILabel *countLabel;
     __weak IBOutlet UIImageView *sponsorImage;
     __weak IBOutlet UIButton *sponsorButton;
-    __weak IBOutlet UIView *view;
-    
-    __weak IBOutlet UILabel *attributionLabel;
     __weak IBOutlet UILabel *quoteLabel;
+    __weak IBOutlet UIImageView *quoteImage;
+    __weak IBOutlet UILabel *paragraphLabel;
+    IBOutlet UILabel *gushesSent;
 }
+@property (strong, nonatomic) IBOutlet UIImageView *sponsorImageView;
 @property (weak,nonatomic)NSString *test;
+@property (weak, nonatomic) IBOutlet UIView *gushView;
+
 @end

@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface sonsorWVViewController : UIViewController
+@interface sonsorWVViewController : UIViewController<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *homeButton;
+- (IBAction)learnMoreClicked:(id)sender;
 
 @end
