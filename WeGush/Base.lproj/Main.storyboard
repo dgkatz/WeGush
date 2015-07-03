@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bBO-if-mKc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="bBO-if-mKc">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -663,21 +663,6 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="hbK-hg-oq3" style="IBUITableViewCellStyleDefault" id="Bmc-H8-D21">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bmc-H8-D21" id="XX2-kR-veD">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hbK-hg-oq3">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
@@ -783,14 +768,14 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sponsor-logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="Chu-Zj-Pmp">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="pmc2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Chu-Zj-Pmp">
                                         <rect key="frame" x="42" y="66" width="236" height="57"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="Chu-Zj-Pmp" secondAttribute="height" multiplier="236:57" id="1i6-a1-WAj"/>
                                         </constraints>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZq-Ql-J9S">
-                                        <rect key="frame" x="0.0" y="5" width="320" height="129"/>
+                                        <rect key="frame" x="0.0" y="2" width="320" height="129"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -893,7 +878,7 @@
             </objects>
             <point key="canvasLocation" x="2703" y="-1516"/>
         </scene>
-        <!--Sponsor-->
+        <!--SonsorWV View Controller-->
         <scene sceneID="jXb-QP-e66">
             <objects>
                 <viewController id="v1m-bd-433" customClass="sonsorWVViewController" sceneMemberID="viewController">
@@ -921,7 +906,7 @@
                             <constraint firstItem="VHA-hL-DuN" firstAttribute="top" secondItem="NEV-xa-qzW" secondAttribute="bottom" id="tu4-Gx-scx"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sponsor" id="reV-A0-uVt">
+                    <navigationItem key="navigationItem" id="reV-A0-uVt">
                         <barButtonItem key="leftBarButtonItem" title="Learn More" id="QEX-vN-WZg">
                             <color key="tintColor" red="0.5568627451" green="0.88235294119999996" blue="0.90980392160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -963,7 +948,7 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DO9-Do-KGs" id="TjG-3O-Did">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Version 1.29" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csa-qr-h7i">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Version 1.35" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="csa-qr-h7i">
                                                     <rect key="frame" x="118" y="110" width="84" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="csa-qr-h7i" secondAttribute="height" multiplier="4:1" id="apt-1D-8x4"/>
@@ -1152,10 +1137,10 @@
     </scenes>
     <resources>
         <image name="AboutScreenIcon.png" width="95" height="95"/>
-        <image name="Menu@2x.png" width="640" height="1136"/>
+        <image name="Menu@2x.png" width="82" height="117"/>
         <image name="heart.png" width="191" height="192"/>
+        <image name="pmc2.jpg" width="576" height="176"/>
         <image name="quotes.png" width="71" height="52"/>
-        <image name="sponsor-logo.png" width="536" height="138"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -1163,8 +1148,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="qtI-Lz-xL4"/>
-        <segue reference="oXy-sm-KtH"/>
-        <segue reference="t7K-4n-ui8"/>
+        <segue reference="nDq-h0-tDh"/>
+        <segue reference="ZXF-jx-fIR"/>
+        <segue reference="msL-UK-0A7"/>
     </inferredMetricsTieBreakers>
 </document>

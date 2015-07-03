@@ -12,15 +12,21 @@
 #import "Appirater.h"
 #import "dataClass.h"
 #import "UIImageView+WebCache.h"
+#import <AdSupport/AdSupport.h>
 @interface AppDelegate ()
 
 @end
 int i;
+int imCnt;
 @implementation AppDelegate
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    BOOL shouldUseServer4 = NO;
+    NSLog(@"Should use server doesnt exist");
+    [[NSUserDefaults standardUserDefaults]setBool:shouldUseServer4 forKey:@"useServer"];
+    [[NSUserDefaults standardUserDefaults]synchronize];
     UIUserNotificationType types = UIUserNotificationTypeBadge |
     UIUserNotificationTypeSound | UIUserNotificationTypeAlert;
     
@@ -35,9 +41,11 @@ int i;
     [Appirater setTimeBeforeReminding:3];
     [Appirater setDebug:NO];
     [Appirater appLaunched:YES];
-    //id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41894678-4"];
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41894678-4"];
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     
+    [[GAI sharedInstance] defaultTracker].allowIDFACollection = YES;
+    tracker.allowIDFACollection = YES;
     // 2
     [[GAI sharedInstance].logger setLogLevel:kGAILogLevelVerbose];
     
@@ -87,7 +95,8 @@ int i;
     }
     BOOL shouldUseServer2 = [[NSUserDefaults standardUserDefaults]boolForKey:@"useServer"];
     if (shouldUseServer2 == NO) {
-        NSMutableArray *defualtIMageUrlArray =[[NSMutableArray alloc]initWithObjects:@"http://api.wegush.com/1to1/images/messages/msg1.png",
+        NSMutableArray *defualtIMageUrlArray =[[NSMutableArray alloc]initWithObjects:
+                                               @"http://api.wegush.com/1to1/images/messages/msg1.png",
                                                @"http://api.wegush.com/1to1/images/messages/msg2.png",
                                                @"http://api.wegush.com/1to1/images/messages/msg3.png",
                                                @"http://api.wegush.com/1to1/images/messages/msg4.png",
@@ -117,6 +126,11 @@ int i;
         [[NSUserDefaults standardUserDefaults]setObject:defualtIMageUrlArray forKey:@"defualtImageURLData"];
         NSMutableArray *defualtImageData = [[NSMutableArray alloc]init];
         for (int i = 0; i < [defualtIMageUrlArray count]; i++) {
+            [defualtImageData addObject:@""];
+        }
+        imCnt = 0;
+        for (int i = 0; i < [defualtIMageUrlArray count]; i++) {
+            NSLog(@"image %d is beign downloaded",i);
             [SDWebImageDownloader.sharedDownloader downloadImageWithURL:[NSURL URLWithString:[defualtIMageUrlArray objectAtIndex:i]]
                                                                 options:0
                                                                progress:^(NSInteger receivedSize, NSInteger expectedSize)
@@ -127,10 +141,11 @@ int i;
              {
                  if (theImage && finished)
                  {
+                     NSLog(@"image %d has been downloaded",i);
+                     imCnt++;
                      UIImage *img = theImage;
-                     [defualtImageData addObject: UIImagePNGRepresentation(img)];
-                     NSLog(@"Working");
-                     if ([defualtImageData count] == [defualtIMageUrlArray count]) {
+                     [defualtImageData replaceObjectAtIndex:i withObject:UIImagePNGRepresentation(img)];
+                     if (imCnt == [defualtImageData count]) {
                          NSLog(@"done");
                          [[NSUserDefaults standardUserDefaults]setObject:defualtImageData forKey:@"defualtImageData"];
                          [[NSUserDefaults standardUserDefaults]synchronize];

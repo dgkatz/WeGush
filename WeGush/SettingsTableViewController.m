@@ -57,7 +57,7 @@ int i;
     _barButton.target = self.revealViewController;
     _barButton.action = @selector(revealToggle:);
     [self.view addGestureRecognizer:self.revealViewController.panGestureRecognizer];
-    array1 = [NSArray arrayWithObjects: @"Once a day",@"Once a week",@"Once a month",@"Never",@"Use server intereaction", nil];
+    array1 = [NSArray arrayWithObjects: @"Once a day",@"Once a week",@"Once a month",@"Never", nil];
 }
 
 
@@ -113,7 +113,7 @@ int i;
             NSString *randReminder;
             if (shouldUseServer == NO) {
                 NSArray *reminderArray =[[NSArray alloc]initWithArray:[[NSUserDefaults standardUserDefaults]objectForKey:@"defaultReminderData"]];
-                int rand = arc4random_uniform([reminderArray count]);
+                int rand = (int)arc4random_uniform([reminderArray count]);
                 randReminder = [reminderArray objectAtIndex:rand];
             }
             else{
@@ -212,9 +212,6 @@ int i;
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
-
-    if (indexPath.row < 4) {
-        
         NSLog(@"Cell for row at index path called");
         cell.textLabel.text = [array1 objectAtIndex:indexPath.row];
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
@@ -231,30 +228,9 @@ int i;
             cell.accessoryType = UITableViewCellAccessoryNone;
         }
 
-    }
-    else{
-        BOOL shouldUseServer = [[NSUserDefaults standardUserDefaults]boolForKey:@"useServer"];
-        cell.textLabel.text = [array1 objectAtIndex:indexPath.row];
-        UISwitch* aswitch = [[UISwitch alloc] initWithFrame:CGRectZero];
-        aswitch.on = shouldUseServer; // or NO
-        aswitch.tag = 12345;
-        [aswitch addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
-        cell.accessoryView = aswitch;
-    }
     return cell;
 }
-- (void) switchChanged:(id)sender {
-    NSLog(@"This method got called");
-    UISwitch* switchControl = sender;
-    NSLog( @"The switch is %@", switchControl.on ? @"ON" : @"OFF" );
-    BOOL shouldUseServer = [[NSUserDefaults standardUserDefaults]boolForKey:@"useServer"];
-    shouldUseServer = switchControl.on;
-    NSLog(@"%hhd",shouldUseServer);
-    [[NSUserDefaults standardUserDefaults]removeObjectForKey:@"useServer"];
-    [[NSUserDefaults standardUserDefaults]setBool:shouldUseServer forKey:@"useServer"];
-    [[NSUserDefaults standardUserDefaults]synchronize];
-    
-}
+
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
     
         return @"REMINDER FREQUENCY";

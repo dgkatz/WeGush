@@ -107,6 +107,8 @@
 		D7936FD71AAFAC8200943CA4 /* background-iphone6pluswithlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7936FD21AAFAC8200943CA4 /* background-iphone6pluswithlogo.png */; };
 		D7936FD91AAFB2FD00943CA4 /* Menu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7936FD81AAFB2FD00943CA4 /* Menu@2x.png */; };
 		D7936FDB1AAFB3E400943CA4 /* MainLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = D7936FDA1AAFB3E400943CA4 /* MainLogo.png */; };
+		D7B504F61B2E694500F5201A /* libAdIdAccess.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B504F51B2E694500F5201A /* libAdIdAccess.a */; };
+		D7B504F81B2E696E00F5201A /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7B504F71B2E696E00F5201A /* AdSupport.framework */; };
 		D7BD6F401A97D9B60005C838 /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = D7BD6F3F1A97D9B60005C838 /* Appirater.m */; };
 		D7BD6F421A97D9E20005C838 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD6F411A97D9E20005C838 /* CFNetwork.framework */; };
 		D7BD6F441A97DA010005C838 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7BD6F431A97DA010005C838 /* StoreKit.framework */; };
@@ -144,6 +146,7 @@
 		D7EB144B1A82DF8100B0FF6C /* youmademyday.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14361A82DF8100B0FF6C /* youmademyday.png */; };
 		D7EB144C1A82DF8100B0FF6C /* youmakemelaugh.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14371A82DF8100B0FF6C /* youmakemelaugh.png */; };
 		D7EB144D1A82DF8100B0FF6C /* yourawesomeness.png in Resources */ = {isa = PBXBuildFile; fileRef = D7EB14381A82DF8100B0FF6C /* yourawesomeness.png */; };
+		D7EC7D741B0BC782001C64E6 /* pmc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D7EC7D731B0BC782001C64E6 /* pmc2.jpg */; };
 		D7F615D71AA6A55C001A773D /* shareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F615D61AA6A55C001A773D /* shareViewController.m */; };
 		D7F615DC1AA7A98D001A773D /* NSData+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F615D91AA7A98D001A773D /* NSData+NSHash.m */; };
 		D7F615DD1AA7A98D001A773D /* NSString+NSHash.m in Sources */ = {isa = PBXBuildFile; fileRef = D7F615DB1AA7A98D001A773D /* NSString+NSHash.m */; };
@@ -312,6 +315,8 @@
 		D7936FD21AAFAC8200943CA4 /* background-iphone6pluswithlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-iphone6pluswithlogo.png"; sourceTree = "<group>"; };
 		D7936FD81AAFB2FD00943CA4 /* Menu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Menu@2x.png"; sourceTree = "<group>"; };
 		D7936FDA1AAFB3E400943CA4 /* MainLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MainLogo.png; sourceTree = "<group>"; };
+		D7B504F51B2E694500F5201A /* libAdIdAccess.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libAdIdAccess.a; sourceTree = "<group>"; };
+		D7B504F71B2E696E00F5201A /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		D7BD6F3E1A97D9B60005C838 /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
 		D7BD6F3F1A97D9B60005C838 /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
 		D7BD6F411A97D9E20005C838 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
@@ -357,6 +362,7 @@
 		D7EB14361A82DF8100B0FF6C /* youmademyday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youmademyday.png; sourceTree = "<group>"; };
 		D7EB14371A82DF8100B0FF6C /* youmakemelaugh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youmakemelaugh.png; sourceTree = "<group>"; };
 		D7EB14381A82DF8100B0FF6C /* yourawesomeness.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yourawesomeness.png; sourceTree = "<group>"; };
+		D7EC7D731B0BC782001C64E6 /* pmc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = pmc2.jpg; sourceTree = "<group>"; };
 		D7F615D51AA6A55C001A773D /* shareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = shareViewController.h; sourceTree = "<group>"; };
 		D7F615D61AA6A55C001A773D /* shareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = shareViewController.m; sourceTree = "<group>"; };
 		D7F615D81AA7A98D001A773D /* NSData+NSHash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+NSHash.h"; sourceTree = "<group>"; };
@@ -378,10 +384,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7B504F81B2E696E00F5201A /* AdSupport.framework in Frameworks */,
 				D7BD6F441A97DA010005C838 /* StoreKit.framework in Frameworks */,
 				D72701271A795025009CC549 /* SystemConfiguration.framework in Frameworks */,
 				D7BD6F421A97D9E20005C838 /* CFNetwork.framework in Frameworks */,
 				D7CDCE1B1A96D7670065ED62 /* QuartzCore.framework in Frameworks */,
+				D7B504F61B2E694500F5201A /* libAdIdAccess.a in Frameworks */,
 				D72701291A795046009CC549 /* libz.dylib in Frameworks */,
 				D72701251A795014009CC549 /* CoreData.framework in Frameworks */,
 				B1DF0D671A6ACC6A00220294 /* MessageUI.framework in Frameworks */,
@@ -402,6 +410,7 @@
 		B1829D291A6A106700B08E2F = {
 			isa = PBXGroup;
 			children = (
+				D7B504F71B2E696E00F5201A /* AdSupport.framework */,
 				D75C1BE31AA15812003D0E3B /* icons */,
 				D70CEA231A9FD24200381109 /* frameworks */,
 				B1829D341A6A106800B08E2F /* WeGush */,
@@ -453,6 +462,7 @@
 		B1829D351A6A106800B08E2F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D7EC7D731B0BC782001C64E6 /* pmc2.jpg */,
 				D7607E051AB279560042F642 /* SDWebImage */,
 				D7CDCDC91A96CB030065ED62 /* image downloader */,
 				D773ED871A7C904200F46396 /* editNavViewController.h */,
@@ -586,6 +596,7 @@
 		D727011B1A794FA2009CC549 /* google analytics */ = {
 			isa = PBXGroup;
 			children = (
+				D7B504F51B2E694500F5201A /* libAdIdAccess.a */,
 				D727012C1A7957B8009CC549 /* GAIEcommercePromotion.h */,
 				D727012B1A7957A7009CC549 /* GAIEcommerceProductAction.h */,
 				D727012A1A79577C009CC549 /* GAIEcommerceProduct.h */,
@@ -847,6 +858,7 @@
 				D71BFF631A85AE8300B48207 /* splash-640x960.png in Resources */,
 				D7607DFB1AB24CE50042F642 /* About.png in Resources */,
 				D7EB14481A82DF8100B0FF6C /* youaremysuperhero.png in Resources */,
+				D7EC7D741B0BC782001C64E6 /* pmc2.jpg in Resources */,
 				D7607DF71AB24CE50042F642 /* Share@2x.png in Resources */,
 				B1829D441A6A106800B08E2F /* Main.storyboard in Resources */,
 				D7EB144D1A82DF8100B0FF6C /* yourawesomeness.png in Resources */,
@@ -1115,7 +1127,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WeGush, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WeGush, Inc.";
 				INFOPLIST_FILE = WeGush/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -1135,7 +1147,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: WeGush, Inc.";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: WeGush, Inc.";
 				INFOPLIST_FILE = WeGush/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

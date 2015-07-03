@@ -62,45 +62,29 @@ typedef enum programStateTypes
     else{
         NSLog(@"should use server is off");
     }
-    
-    if ([SDiPhoneVersion deviceVersion] == iPhone4){
+    if ([SDiPhoneVersion deviceSize] == iPhone35inch){
         image = [UIImage imageNamed:@"background-640x960logo.png"];
         _splash.image = image;
         [self startTimerMethod];
     }
-    else if ([SDiPhoneVersion deviceVersion] == iPhone4S){
-        image = [UIImage imageNamed:@"background-640x960logo.png"];
-        _splash.image = image;
-        [self startTimerMethod];
-    }
-    else if ([SDiPhoneVersion deviceVersion] == iPhone5){
+    else if ([SDiPhoneVersion deviceSize] == iPhone4inch){
         image = [UIImage imageNamed:@"background-640x1136.png"];
         _splash.image = image;
         [self startTimerMethod];
     }
-    else if ([SDiPhoneVersion deviceVersion] == iPhone5S){
-        image = [UIImage imageNamed:@"background-640x1136.png"];
-        _splash.image = image;
-        [self startTimerMethod];
-    }
-    else if ([SDiPhoneVersion deviceVersion] == iPhone5C){
-        image = [UIImage imageNamed:@"background-640x1136.png"];
-        _splash.image = image;
-        [self startTimerMethod];
-    }
-    else if ([SDiPhoneVersion deviceVersion] == iPhone6){
+    else if ([SDiPhoneVersion deviceSize] == iPhone47inch){
         image = [UIImage imageNamed:@"background-750x1334logo.png"];
         _splash.image = image;
         [self startTimerMethod];
     }
-    else {
+    else if ([SDiPhoneVersion deviceSize] == iPhone55inch){
         image = [UIImage imageNamed:@"background-iphone6pluswithlogo.png"];
         _splash.image = image;
         [self startTimerMethod];
     }
-    
-    
-    
+    else{
+        NSLog(@"Error: unrecognized device");
+    }
 }
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     
@@ -184,6 +168,7 @@ typedef enum programStateTypes
     NSLog(@"%@",obj.imageURLData);
     NSLog(@"%@",obj.messageData);
     NSLog(@"%@",obj.imageData);
+    NSLog(@"%@",obj.sponsorInfo);
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSArray *messageArray = [NSArray arrayWithArray:obj.messageData];
     [userDefaults setObject:messageArray forKey:@"messageData"];

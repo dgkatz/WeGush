@@ -136,7 +136,8 @@ int *num;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 - (IBAction)sendGush:(id)sender {
-[extraTextTF resignFirstResponder];    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
+    [extraTextTF resignFirstResponder];
+    UIActionSheet *popup = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:
                             @"Message",
                             @"Email",
                             @"Save To Camera Roll", @"Copy",
@@ -165,6 +166,8 @@ int *num;
         
         BOOL shouldUseServer = [[NSUserDefaults standardUserDefaults]boolForKey:@"useServer"];
         if (shouldUseServer == NO) {
+            NSArray *dimgURLS = [[NSUserDefaults standardUserDefaults]objectForKey:@"defualtImageURLData"];
+            /*
             MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
             mc.mailComposeDelegate = self;
             [mc setSubject:emailTitle];
@@ -174,6 +177,19 @@ int *num;
             //NSData *myData = [NSData dataWithContentsOfFile:[NSString stringWithFormat:@"%@",obj.chosenGush]];
             NSData *myData = UIImagePNGRepresentation(self.gushImageView.image);
             [mc addAttachmentData:myData mimeType:@"image/png" fileName:obj.chosenGush];
+            mc.navigationBar.tintColor = [UIColor colorWithRed:142/255.0 green:225/255.0 blue:232/255.0 alpha:1.0f];
+            [self presentViewController:mc animated:YES completion:NULL];
+            */
+            NSMutableString *emailBody = [[NSMutableString alloc] initWithString:@"<html><body>"];
+            [emailBody appendString:[NSString stringWithFormat:@"<img src='%@' alt='%@'>",[dimgURLS objectAtIndex:obj.chosenIndex],obj.chosenMessage]];
+            [emailBody appendString:[NSString stringWithFormat:@"<p>%@</p>",messageBody]];
+            [emailBody appendString:@"</body></html>"];
+            NSString *bod = [NSString stringWithString:emailBody];
+            MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+            mc.mailComposeDelegate = self;
+            [mc setSubject:emailTitle];
+            [mc setMessageBody:bod isHTML:YES];
+            [mc setToRecipients:toRecipents];
             mc.navigationBar.tintColor = [UIColor colorWithRed:142/255.0 green:225/255.0 blue:232/255.0 alpha:1.0f];
             [self presentViewController:mc animated:YES completion:NULL];
         }

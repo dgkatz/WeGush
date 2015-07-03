@@ -172,9 +172,9 @@
         [tracker send:[[GAIDictionaryBuilder createScreenView] build]];
         
         NSString *emailTitle = @"WeGush: Deliver Gratitude in Real Time";
-        NSString *url = @"http://itunes.apple.com/app/id963544162";
+        NSString *url = @"https://itunes.apple.com/us/app/wegush-express-appreciation/id984121643?ls=1&mt=8";
         NSString *url2 = @"http://www.WeGush.com";
-        NSString *emailBody = [NSString stringWithFormat:@"I thought you might enjoy unleashing your gratitude with the WeGush app. Check it out at:<br/><br/><a href='%@'>%@</a><br/><br/> I bet that every day you experience kindnesses large and small. WeGush makes it easy to express your gratitude before the moment slips away. Simply choose a beautiful, personal, appreciation message to send right from your iPhone. And never miss another opportunity to say “thank you”!<br/><br/>WeGush also offers a group appreciation web app. It’s perfect for whatever your group is celebrating:  teacher and coach appreciation, retirement, graduation, or a milestone birthday!  Learn more at:<br/><br/><a href='%@'>%@</a>",url,url,url2,url2];
+        NSString *emailBody = [NSString stringWithFormat:@"I thought you might enjoy unleashing your gratitude with the WeGush app. Check it out at:<br/><br/><a href='%@'>%@</a><br/><br/> I bet that every day you experience kindnesses large and small. WeGush makes it easy to express your gratitude before the moment slips away. Simply choose a beautiful, personal, appreciation message to send right from your iPhone. And never miss another opportunity to say “thank you”!<br/><br/>Learn more at:<br/><br/><a href='%@'>%@</a>",url,url,url2,url2];
         NSArray *toRecipents = Nil;
         MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
         mc.mailComposeDelegate = self;
@@ -235,7 +235,7 @@
         }
         NSString *df = [[UIDevice currentDevice] systemVersion];
         NSString *emailTitle = @"WeGush Feedback";
-        NSString *messageBody = [NSString stringWithFormat:@"\n\n\n\n\n----------------------------\nDevice Details:\n Platform: %@\n%@\nApp Version: 1.29",df,device];
+        NSString *messageBody = [NSString stringWithFormat:@"\n\n\n\n\n----------------------------\nDevice Details:\n Platform: %@\n%@\nApp Version: 1.35",df,device];
         NSArray *toRecipents = [NSArray arrayWithObject:@"info@WeGush.com"];
         
         MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];

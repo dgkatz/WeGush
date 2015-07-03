@@ -60,9 +60,11 @@
     NSString *strURL;
     if (shouldUseServer == NO) {
         strURL = [sponsorArray objectAtIndex:3];
+        NSLog(@"%@",strURL);
     }
     else{
         strURL = [obj.sponsorInfo objectAtIndex:3];
+        NSLog(@"%@",strURL);
     }
     NSURL *url = [NSURL URLWithString:strURL];
     NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];

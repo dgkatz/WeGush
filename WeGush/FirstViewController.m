@@ -101,7 +101,8 @@ Reachability *internetReachableFoo;
     [[NSUserDefaults standardUserDefaults]setObject:imageArray forKey:@"defaultImageData"];
     NSMutableArray *defaultSpinsorArray = [[NSMutableArray alloc]initWithObjects:@"Proud to partner with the Pan-Mass Challenge",@"http://api.wegush.com/1to1/sponsors/pmc1/pmc2.png",@"Learn more about the PMC:",@"http://api.wegush.com/1to1/sponsors/pmc1/index.html",@"http://www.pmc.org", nil];
     [[NSUserDefaults standardUserDefaults]setObject:defaultSpinsorArray forKey:@"defaultSponsorData"];
-    NSMutableArray *defaultQuoteArray =[[NSMutableArray alloc]initWithObjects:@"Feeling gratitude and not expressing it is like wrapping a present and not giving it.",@"Silent gratitude isn't very much to anyone.",
+    NSMutableArray *defaultQuoteArray =[[NSMutableArray alloc]initWithObjects:@"Feeling gratitude and not expressing it is like wrapping a present and not giving it.",
+                                        @"Silent gratitude isn't very much to anyone.",
                                         @"Truly appreciate those around you and you'll soon find many others around you.",
                                         @"Everyone wants to be appreciated, so if you appreciate someone, don't keep it a secret.",
                                         @"There isn't anyone who doesn't appreciate kindness and compassion.",
@@ -127,10 +128,7 @@ Reachability *internetReachableFoo;
                                         @"Try to make at least one person happy every day. If you cannot do a kind deed, speak a kind word.",
                                         @"The most worth-while thing is to try to put happiness into the lives of others.",
                                         @"Happiness depends more on how life strikes you than on what happens.",
-                                        @"We don't find the meaning of life by ourselves alone, we find it in one another.",
-                                        @"Treat everyone you meet as if they were going to be dead by midnight. ",
-                                        @"A little thought and a little kindness are often worth more than a great deal of money.",
-                                        @"We need more kindness, more compassion, more laughter. I definitely want to contribute to that.",
+                                        @"We don't find the meaning of life by ourselves alone, we find it in one another.",@"We need more kindness, more compassion, more laughter. I definitely want to contribute to that.",
                                         @"When autumn darkness falls, what we will remember are the small acts of kindness.",
                                         @"You cannot do a kindness too soon, for you never know how soon it will be too late.",
                                         @"As the sun makes ice melt, kindness causes misunderstanding, mistrust, and hostility to evaporate.",
@@ -139,15 +137,22 @@ Reachability *internetReachableFoo;
                                         @"Remember there's no such thing as a small act of kindness. Every act creates a ripple with no logical end",
                                         @"Kindness makes a fellow feel good whether it's being done to him or by him.",
                                         @"As much as we need a prosperous economy, we also need a prosperity of kindness and decency.",
-                                        @"A kindess received should be returned with a freer hand.",
+                                        @"A kindness received should be returned with a freer hand.",
                                         @"God gave you a gift of 86,000 seconds today. Have you used one to say thank you?",
                                         @"Let us be grateful to the people who make us happy; they are the charming gardeners who make our souls blossom.",
                                         @"Forget injuries, never forget kindnesses",
                                         @"That best portion of a good man's life, His little, nameless, unremembered acts of kindness and love.",
                                         @"No act of kindness, no matter how small, is ever wasted.",
-                                        @"I will not play at tug war, I'd rather play at hug o' war, where everyone hugs instead of tugs", nil];
+                                        @"I will not play at tug war, I'd rather play at hug o' war, where everyone hugs instead of tugs",nil];
     [[NSUserDefaults standardUserDefaults]setObject:defaultQuoteArray forKey:@"defaultQuoteData"];
-    NSMutableArray *defaultAttributionArray = [[NSMutableArray alloc]initWithObjects:@"William Arthur Ward",@"Gertrude Stein",@"Ralph Marston",@"Mary Kay Ash",@"Dalai Lama",@"Jacques Maritian",@"Paul Bloom",@"Joseph B. Wirthlin",
+    NSMutableArray *defaultAttributionArray = [[NSMutableArray alloc]initWithObjects: @"William Arthur Ward",
+                                               @"Gertrude Stein",
+                                               @"Ralph Marston",
+                                               @"Mary Kay Ash",
+                                               @"Dalai Lama",
+                                               @"Jacques Maritain",
+                                               @"Paul Bloom",
+                                               @"Joseph B. Wirthlin",
                                                @"Henry Ward Beecher",
                                                @"Charles Schwab",
                                                @"Meister Eckhardt",
@@ -168,8 +173,6 @@ Reachability *internetReachableFoo;
                                                @"Robert Baden-Powell",
                                                @"Andy Rooney",
                                                @"Thomas Merton",
-                                               @"Og Mandino",
-                                               @"John Rushkin",
                                                @"Ellen DeGeneres",
                                                @"Jens Stoltenberg",
                                                @"Ralph Waldo Emerson",
@@ -186,6 +189,7 @@ Reachability *internetReachableFoo;
                                                @"William Wordsworth",
                                                @"Aesop",
                                                @"Shel Silverstein"
+
                                                , nil];
     [[NSUserDefaults standardUserDefaults]setObject:defaultAttributionArray forKey:@"defaultAttributionData"];
     NSMutableArray *defaultReminderArray = [[NSMutableArray alloc]initWithObjects:@"Time to make somebody feel amazing.",
